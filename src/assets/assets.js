@@ -63,6 +63,10 @@ import parcel_icon from "./parcel_icon.png";
 import tips1 from "./tips1.png";
 import tips2 from "./tips2.png";
 import team from "./team.png";
+import top_food1 from './Top_Food1.png';
+import top_food2 from './Top_Food2.png';
+import top_food3 from './Top_Food3.png';
+import top_food4 from './Top_Food4.png';
 
 export const assets = {
   logo,
@@ -88,6 +92,10 @@ export const assets = {
   tips1,
   tips2,
   team,
+  top_food1,
+  top_food2,
+  top_food3,
+  top_food4
 };
 
 export const menu_list = [
