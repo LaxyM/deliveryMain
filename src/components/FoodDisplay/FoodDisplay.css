@@ -1,0 +1,11 @@
+.container-tips {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	width: 1360px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
