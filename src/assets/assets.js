@@ -73,10 +73,15 @@ import parcel_icon from "./parcel_icon.png";
 import tips1 from "./tips1.png";
 import tips2 from "./tips2.png";
 import team from "./team.png";
-import top_food1 from './Top_Food1.png';
-import top_food2 from './Top_Food2.png';
-import top_food3 from './Top_Food3.png';
-import top_food4 from './Top_Food4.png';
+import top_food1 from "./Top_Food1.png";
+import top_food2 from "./Top_Food2.png";
+import top_food3 from "./Top_Food3.png";
+import top_food4 from "./Top_Food4.png";
+import restaurants_1 from "./restaurant_1.png";
+import restaurants_2 from "./restaurant_2.png";
+import restaurants_3 from "./restaurant_3.png";
+import restaurants_4 from "./restaurant_4.png";
+
 
 export const assets = {
   logo,
@@ -105,7 +110,11 @@ export const assets = {
   top_food1,
   top_food2,
   top_food3,
-  top_food4
+  top_food4,
+  restaurants_1,
+  restaurants_2,
+  restaurants_3,
+  restaurants_4,
 };
 
 export const menu_list = [
