@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
+import { Link } from 'react-router-dom'; 
 
 import './Navbar.css'
 import { assets } from '../../assets/assets'
@@ -16,7 +17,7 @@ const Navbar = () => {
 					onClick={() => setMenu('home')}
 					className={menu === 'home' ? 'active' : ''}
 				>
-					HOME
+					<Link to="/">HOME</Link>
 				</li>
 				<li
 					onClick={() => setMenu('menu')}
@@ -28,7 +29,7 @@ const Navbar = () => {
 					onClick={() => setMenu('restaurants')}
 					className={menu === 'restaurants' ? 'active' : ''}
 				>
-					Restaurants
+					<Link to="/more-restaurants">Restaurants</Link>
 				</li>
 				<li
 					onClick={() => setMenu('reviews')}

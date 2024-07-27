@@ -4,7 +4,7 @@ import { assets } from "../../assets/assets";
 import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
-  const location = useLocation(); 
+  const location = useLocation();
 
   return (
     <div className="footer" id="footer">
@@ -13,7 +13,9 @@ const Footer = () => {
           <img src={assets.logo} alt="Logo" className="footer-logo" />
           <div className="footer-text">
             <p>We always make our customers happy.</p>
-            <p>Fast, fresh, and delicious meals delivered right to your door.</p>
+            <p>
+              Fast, fresh, and delicious meals delivered right to your door.
+            </p>
             <p>Your satisfaction is our top priority, every single time!</p>
           </div>
           <div className="footer-social-icons">
@@ -49,17 +51,29 @@ const Footer = () => {
             <li className={location.pathname === "/about" ? "active" : ""}>
               <Link to="/about">About us</Link>
             </li>
-            <li><Link to="/menu">Menu</Link></li>
-            <li><Link to="/restaurants">Restaurants</Link></li>
+            <li>
+              <Link to="/menu">Menu</Link>
+            </li>
+            <li>
+              <Link to="/restaurants">Restaurants</Link>
+            </li>
           </ul>
         </div>
         <div className="footer-column">
           <h3>SUPPORT</h3>
           <ul>
-            <li><Link to="/support-center">Support Center</Link></li>
-            <li><Link to="/delivery-terms">Delivery Terms</Link></li>
-            <li><Link to="/faq">FAQ</Link></li>
-            <li><Link to="/privacy-policy">Privacy policy</Link></li>
+            <li>
+              <Link to="/support-center">Support Center</Link>
+            </li>
+            <li>
+              <Link to="/delivery-terms">Delivery Terms</Link>
+            </li>
+            <li>
+              <Link to="/faq">FAQ</Link>
+            </li>
+            <li>
+              <Link to="/privacy-policy">Privacy policy</Link>
+            </li>
           </ul>
         </div>
         <div className="footer-column">
@@ -67,7 +81,10 @@ const Footer = () => {
           <ul>
             <li>+49 000 0000000</li>
             <li>contactus@Company.com</li>
-            <li>Office Address: 1234 Foodie St,<br /> Delicious City, Yummyland</li>
+            <li>
+              Office Address: 1234 Foodie St,
+              <br /> Delicious City, Yummyland
+            </li>
           </ul>
         </div>
         <div className="footer-column">
