@@ -1,11 +1,66 @@
-.container-tips {
-	display: flex;
-	justify-content: space-between;
-	margin: 0 auto;
-	width: 1360px;
+
+.container-food {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 30px;
 }
 
-.container {
-    display: flex;
-    justify-content: space-between;
+.food-item {
+	background-color: #fafafa;
+	padding: 15px;
+	border-radius: 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.food-item:hover {
+	transform: scale(1.05);
+}
+
+.food-item-image {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+.food-item-content {
+	padding: 10px;
+	text-align: center;
+}
+
+.food-item-price,
+.food-item-rate {
+	margin: 5px 0;
+	font-weight: bold;
+	color: #333;
+}
+
+
+.food-item__block {
+	width: 100%;
+	text-align: center;
+}
+
+
+.food-img {
+	width: 100%;
+	height: auto;
+	border-radius: 30px;
+	object-fit: cover;
+	margin-bottom: 10px;
+}
+
+.food-item-price {
+	font-size: 20px;
+	color: #888;
+	margin-top: 5px;
+}
+
+.title__fz-14 {
+	font-size: 14px;
+	color: #666;
 }

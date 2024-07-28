@@ -1,13 +1,14 @@
 .about-us {
+    margin-bottom: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: #f9f9f9;
 }
 
 .about-us-content {
     display: flex;
+    gap: 30px;
     flex-direction: row;
     max-width: 1200px;
     width: 100%;
