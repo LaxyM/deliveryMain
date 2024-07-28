@@ -20,12 +20,12 @@
 	transform: scale(1.05);
 }
 
-.food-item-image {
+/* .food-item-image {
 	width: 100%;
 	height: auto;
 	border-radius: 8px;
 	object-fit: cover;
-}
+} */
 
 .food-item-content {
 	padding: 10px;
@@ -48,7 +48,7 @@
 
 .food-img {
 	width: 100%;
-	height: auto;
+	height: 450px;
 	border-radius: 30px;
 	object-fit: cover;
 	margin-bottom: 10px;
