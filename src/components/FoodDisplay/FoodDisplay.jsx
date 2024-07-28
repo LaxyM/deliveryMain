@@ -9,7 +9,7 @@ const FoodDisplay = () => {
 	const { foodList } = React.useContext(StoreContext)
 
 	return (
-		<Carousel className='food-display' autoplay autoplaySpeed={6000}>
+		<Carousel className='food-display' autoplay autoplaySpeed={5000}>
 			<div className='food-display'>
 				<div className='flex-tips'>
 					<div className='title-tips-32'>Our popular dishes</div>
