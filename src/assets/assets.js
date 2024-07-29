@@ -3,6 +3,12 @@ import logo from "./logo.png";
 import header_img from "./header_img.png";
 import search_icon from "./search_icon.svg";
 import sack_dollar from "./sack-dollar-solid.svg";
+
+import add from './add.png'
+import order from './order.png'
+import upload from './upload.png'
+import checklist from './checklist.png'
+
 import menu_1 from "./menu_1.png";
 import menu_2 from "./menu_2.png";
 import menu_3 from "./menu_3.png";
@@ -84,6 +90,10 @@ import restaurants_4 from "./restaurant_4.png";
 
 
 export const assets = {
+  add,
+  order,
+  upload,
+  checklist,
   logo,
   basket_icon,
   header_img,

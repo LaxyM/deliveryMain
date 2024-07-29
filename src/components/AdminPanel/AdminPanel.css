@@ -1,0 +1,20 @@
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.admin-content {
+  display: flex;
+  flex: 1;
+  margin-left: 18%; /* Отступ слева, равный ширине сайдбара */
+  padding-top: 50px; /* Отступ для Navbar */
+  position: relative; /* Убедитесь, что контент не накладывается на сайдбар */
+}
+
+.admin-main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}

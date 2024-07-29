@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
 
-const Navbar = ({ setShowLogin }) => {
+const Navbar = ({ setShowLogin, user }) => {
   const [menu, setMenu] = React.useState("home");
+
 
   return (
     <div className="navbar">
@@ -43,6 +44,14 @@ const Navbar = ({ setShowLogin }) => {
         >
           Contact
         </li>
+        {user && user.isAdmin && (
+          <li
+            onClick={() => setMenu("admin")}
+            className={menu === "admin" ? "active" : ""}
+          >
+            <Link to="/admin">Admin Panel</Link>
+          </li>
+        )}
       </ul>
       <div className="navbar-right">
         <img src={assets.search_icon} alt="" />
