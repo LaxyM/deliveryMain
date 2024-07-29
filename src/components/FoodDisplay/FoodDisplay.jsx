@@ -34,7 +34,7 @@ const FoodDisplay = () => {
 
 			<div className='food-display'>
 				<div className='flex-tips'>
-					<div className='title-tips-32'>Our popular dishes</div>
+					<div className='title-tips-32'>Our popular drinks</div>
 					<ButtonViewAll />
 				</div>
 				<div className='container-food'>
