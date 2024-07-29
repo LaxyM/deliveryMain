@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './AboutUs.css';
-import { assets } from '../../assets/assets'; // Используем assets для импорта изображения
+import { assets } from '../../assets/assets';
 
 const AboutUs = () => {
     return (

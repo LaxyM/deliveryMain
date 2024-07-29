@@ -1,0 +1,185 @@
+.more-restaurants {
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.restaurant-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.restaurant-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 300px; /* Фиксированная высота карточек */
+}
+
+.restaurant-card img {
+  width: 200px;
+  height: 100%; /* Изображение растягивается на всю высоту карточки */
+  object-fit: cover; /* Обеспечивает покрытие всего блока */
+}
+
+.restaurant-info {
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.restaurant-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.restaurant-address,
+.restaurant-hours,
+.restaurant-contact {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.restaurant-description {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.booking-form {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 500px; /* Максимальная ширина формы */
+  margin-left: auto;
+  margin-right: auto; /* Центрирование формы по горизонтали */
+}
+
+.booking-form h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.booking-form label {
+  font-size: 16px;
+  color: #333;
+}
+
+.booking-form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.booking-form .btn {
+  width: 100%;
+  height: 40px;
+  background-color: #f6f4ff;
+  border: none;
+  border-radius: 12px;
+  color: #7b61ff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 600ms ease;
+  text-align: center;
+}
+
+.booking-form .btn:hover {
+  background-color: #dcdafe;
+}
+
+@media (max-width: 750px) {
+  .more-restaurants {
+    padding: 10px;
+  }
+
+  .page-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .restaurant-details {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .restaurant-card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .restaurant-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .restaurant-info {
+    padding: 10px;
+  }
+
+  .restaurant-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .restaurant-address,
+  .restaurant-hours,
+  .restaurant-contact,
+  .restaurant-description {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .booking-form {
+    padding: 15px;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    max-width: none;
+  }
+
+  .booking-form h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .booking-form label {
+    font-size: 14px;
+  }
+
+  .booking-form input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .booking-form .btn {
+    height: 35px;
+    font-size: 14px;
+  }
+}

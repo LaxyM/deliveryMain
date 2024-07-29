@@ -88,13 +88,13 @@
 
 @media (max-width: 750px) {
   .footer-content {
-      flex-direction: column;
-      gap: 20px;
+    flex-direction: column;
+    gap: 20px;
   }
   .footer-column {
-      width: 100%;
+    width: 100%;
   }
   .footer-copyright {
-      font-size: 8px;
+    font-size: 8px;
   }
 }
