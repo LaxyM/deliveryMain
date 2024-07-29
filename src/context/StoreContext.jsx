@@ -1,16 +1,13 @@
+/* eslint-disable react/prop-types */
 import axios from 'axios'
 import { createContext, useEffect, useState } from 'react'
-
 
 export const StoreContext = createContext(null)
 
 const StoreContextProvider = props => {
 	const [cartItems, setCartItems] = useState({})
-    const url = 'https://66a5f78923b29e17a1a1615f.mockapi.io/'
-    const [foodList, setFoodList] = useState([])
-
-
-
+	const url = 'https://66a5f78923b29e17a1a1615f.mockapi.io/'
+	const [foodList, setFoodList] = useState([])
 
 	const addToCart = itemId => {
 		if (!cartItems[itemId]) {
@@ -24,7 +21,6 @@ const StoreContextProvider = props => {
 		setCartItems(prev => ({ ...prev, [itemId]: prev[itemId] - 1 }))
 	}
 
-
 	const getTotalCartCount = () => {
 		let totalCount = 0
 
@@ -36,28 +32,18 @@ const StoreContextProvider = props => {
 		return totalCount
 	}
 
+	const fetchFoodList = async () => {
+		const response = await axios.get(url + '/api/dishes/dishes')
+		console.log('Data received:', response.data)
+		setFoodList(response.data)
+	}
 
-
-
-    const fetchFoodList = async () => {
-        const response = await axios.get(url + '/api/dishes/dishes')
-        setFoodList(response.data.data)
-    }
-
-
-
-
-
-	// useEffect(() => {
-	// 	console.log(cartItems)
-	// })
-
-
-
-
-
-
-
+	useEffect(() => {
+		async function loadDate() {
+			await fetchFoodList()
+		}
+		loadDate()
+	}, [])
 
 	const contextValue = {
 		cartItems,
@@ -65,6 +51,7 @@ const StoreContextProvider = props => {
 		addToCart,
 		removeFromCart,
 		getTotalCartCount,
+		foodList,
 	}
 
 	return (
