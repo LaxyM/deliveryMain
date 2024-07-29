@@ -1,0 +1,21 @@
+.navbar-admin {
+  padding: 8px 4%;
+  background-color: #f0f0f0; /* Добавлен фон для визуализации */
+  border-bottom: 1px solid #ccc; /* Добавлена граница снизу */
+  position: fixed; /* Фиксированное положение */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10; /* Убедитесь, что Navbar поверх всего */
+}
+
+.text {
+  font-weight: 600;
+  color: #535151;
+  display: flex;
+  padding-left: 4px;
+}
+
+.navbar-admin p {
+  width: max(10%, 80px);
+}
