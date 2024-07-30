@@ -13,7 +13,6 @@ const Home = () => {
         <Header />
       </div>
       <div className="main-page">
-        <FoodDisplay />
         <TipsBlock />
         <Restaurants />
         <AboutUs />
