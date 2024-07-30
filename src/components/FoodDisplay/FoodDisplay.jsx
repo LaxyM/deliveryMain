@@ -1,5 +1,4 @@
 import React from 'react'
-import ButtonViewAll from '../ButtonViewAll/ButtonViewAll'
 import FoodItem from '../FoodItem/FoodItem'
 import './FoodDisplay.css'
 import { StoreContext } from '../../context/StoreContext'

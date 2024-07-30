@@ -7,7 +7,9 @@ export const StoreContext = createContext(null)
 const StoreContextProvider = props => {
 	const [cartItems, setCartItems] = useState({})
 	const url = 'https://66a5f78923b29e17a1a1615f.mockapi.io/'
+	const url2 = 'https://66a94cd0613eced4eba50bb0.mockapi.io/'
 	const [foodList, setFoodList] = useState([])
+	const [menuList, setMenuList] = useState([])
 
 	const addToCart = itemId => {
 		if (!cartItems[itemId]) {
@@ -42,9 +44,20 @@ const StoreContextProvider = props => {
 		}
 	}
 
+	const fetchMenuList = async () => {
+		try {
+			const response = await axios.get(url2 + 'api/dishes/menu/dishes')
+			console.log('Menu data received:', response.data)
+			setMenuList(response.data)
+		} catch (error) {
+			console.error('Error fetching menu list:', error)
+		}
+	}
+
 	useEffect(() => {
 		async function loadDate() {
 			await fetchFoodList()
+			await fetchMenuList()
 		}
 		loadDate()
 	}, [])
@@ -56,6 +69,7 @@ const StoreContextProvider = props => {
 		removeFromCart,
 		getTotalCartCount,
 		foodList,
+		menuList,
 	}
 
 	return (
