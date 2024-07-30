@@ -20,13 +20,6 @@
 	transform: scale(1.05);
 }
 
-/* .food-item-image {
-	width: 100%;
-	height: auto;
-	border-radius: 8px;
-	object-fit: cover;
-} */
-
 .food-item-content {
 	padding: 10px;
 	text-align: center;
