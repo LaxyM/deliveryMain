@@ -1,8 +1,11 @@
 .food-display {
-	margin-bottom: 120px;
+	margin-bottom: 80px;
 }
 
+
 .food-img {
+	width: 320px;
+	height: 390px;
 	padding-bottom: 10px;
 	padding-right: 4px;
 	border-radius: 30px;
@@ -18,4 +21,16 @@
 	font-weight: 400;
 	color: #979797;
 	line-height: 20px;
+}
+
+.food-item-price {
+	color: rgb(26, 26, 27);
+	font-size: 22px;
+	font-weight: 500;
+	margin: 10px 0px;
+}
+
+.title__fz-16 {
+	font-size: 22px;
+	font-weight: 600;
 }
