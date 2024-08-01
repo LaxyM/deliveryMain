@@ -7,6 +7,8 @@ import MoreRestaurants from './pages/MoreRestaurants/MoreRestaurants'
 import Login from './components/Login/Login'
 import AdminPanel from './components/AdminPanel/AdminPanel'
 import Menu from './pages/Menu/Menu'
+import Cart from './pages/Cart/Cart'; 
+
 
 function App() {
 	const [showLogin, setShowLogin] = useState(false)
@@ -28,6 +30,7 @@ function App() {
 					<Route path='/' element={<Home />} />
 					<Route path='/menu' element={<Menu />} />
 					<Route path='/more-restaurants' element={<MoreRestaurants />} />
+					<Route path='/cart' element={<Cart />} />
 					<Route
 						path='/admin/*'
 						element={

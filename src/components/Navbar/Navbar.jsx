@@ -1,21 +1,26 @@
+
 /* eslint-disable react/prop-types */
-import React from 'react'
+import React, { useContext } from "react";
 import { Link } from 'react-router-dom'
 import { Badge } from 'antd'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
 import { StoreContext } from '../../context/StoreContext'
 
+
+
 const Navbar = ({ setShowLogin, user }) => {
-	const [menu, setMenu] = React.useState('home')
+
 
 	const { getTotalCartCount, getTotalCartAmount } =
 		React.useContext(StoreContext)
 
 	return (
 		<div className='navbar'>
-			<img src={assets.logo_test} alt='' className='logo' />
-
+			<Link to="/">
+        <img src={assets.logo_test} alt="" className="logo" />
+      </Link>
+      
 			<ul className='navbar-menu'>
 				<li
 					onClick={() => setMenu('home')}
@@ -83,4 +88,5 @@ const Navbar = ({ setShowLogin, user }) => {
 	)
 }
 
-export default Navbar
+
+export default Navbar;
