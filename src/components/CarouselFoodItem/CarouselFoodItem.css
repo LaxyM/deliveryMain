@@ -1,16 +1,16 @@
-.title__fz-14 {
+.carousel-title__fz-14 {
 	font-size: 14px;
 	font-weight: 400;
 	color: #979797;
 	line-height: 20px;
 }
 
-.title__fz-16 {
+.carousel-title__fz-16 {
 	font-size: 22px;
 	font-weight: 600;
 }
 
-.food-item-name-rating {
+.carousel-food-item-name-rating {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -18,29 +18,23 @@
 	gap: 10px;
 }
 
-.food-item-infos {
+.carousel-food-item-infos {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
 }
 
-.food-item__items {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-}
-
-.food-item-description {
+.carousel-food-item-description {
 	color: #676767;
+	text-align: center;
 }
 
-.food-item-img-container {
+.carousel-food-item-img-container {
 	position: relative;
 }
 
-.food-item-img-container .add-icon {
+.carousel-food-item-img-container .add-icon {
 	width: 35px;
 	position: absolute;
 	bottom: 25px;
@@ -50,7 +44,7 @@
 	background-color: rgb(252, 252, 252);
 }
 
-.food-item-counter {
+.carousel-food-item-counter {
 	position: absolute;
 	bottom: 25px;
 	right: 15px;
@@ -62,21 +56,21 @@
 	background-color: rgb(255, 255, 255);
 }
 
-.food-item-counter img {
+.carousel-food-item-counter img {
 	width: 30px;
 }
 
 /* картинка карточки */
-.food-img {
-	width: 100%;
-	height: 420px;
+.carousel-food-img {
+	width: 310px;
+	height: 360px;
 	border-radius: 30px;
 	object-fit: cover;
 	margin-bottom: 10px;
 }
 
 /* карточка */
-.food-item {
+.carousel-food-item {
 	background-color: #fafafa;
 	padding: 15px;
 	border-radius: 20px;
@@ -87,23 +81,23 @@
 	align-items: center;
 }
 
-.food-item:hover {
+.carousel-food-item:hover {
 	transform: scale(1.05);
 }
 
-.food-item-price {
+.carousel-food-item-price {
 	font-size: 20px;
 	color: #888;
 	margin-top: 5px;
 }
 
-.title__fz-14 {
+.carousel-title__fz-14 {
 	font-size: 14px;
 	color: #666;
 }
 
-.food-item-price,
-.food-item-rate {
+.carousel-food-item-price,
+.carousel-food-item-rate {
 	margin: 5px 0;
 	font-weight: bold;
 	color: #333;

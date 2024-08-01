@@ -2,28 +2,25 @@ import React from 'react'
 import { Rate } from 'antd'
 import './CarouselFoodItem.css'
 
-
-const CarouselFoodItem = ({ id, name, price, description, image, rate }) => {
-
+// eslint-disable-next-line react/prop-types
+const CarouselFoodItem = ({ name, price, description, image, rate }) => {
 	return (
-		<div className='food-item'>
-			<div className='food-item-img-container'>
-				<img className='food-img' src={image} alt='food' />
+		<div className='carousel-food-item'>
+			<div className='carousel-food-item-img-container'>
+				<img className='carousel-food-img' src={image} alt='food' />
 			</div>
-			<div className='food-item-info'>
-				<div className='food-item-name-rating'>
+			<div className='carousel-food-item-info'>
+				<div className='carousel-food-item-name-rating'>
 					<Rate defaultValue={rate} />
 				</div>
-				<div className='food-item-infos'>
-					<div className='title title__fz-16'>{name}</div>
-					<div className='food-item-price'>{price} $</div>
+				<div className='carousel-food-item-infos'>
+					<div className='carousel-title carousel-title__fz-16'>{name}</div>
+					<div className='carousel-food-item-price'>{price} $</div>
 				</div>
-
-				<div className='food-item__items'>
-					<div className='food-item-description'>{description}</div>
-				</div>
+				<div className='carousel-food-item-description'>{description}</div>
 			</div>
 		</div>
 	)
 }
+
 export default CarouselFoodItem
