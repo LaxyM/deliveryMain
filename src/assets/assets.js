@@ -3,11 +3,14 @@ import logo from "./logo.png";
 import header_img from "./header_img.png";
 import search_icon from "./search_icon.svg";
 import sack_dollar from "./sack-dollar-solid.svg";
+import logo_test from "./logo_test.png";
 
-import add from './add.png'
-import order from './order.png'
-import upload from './upload.png'
-import checklist from './checklist.png'
+import main_foto from "./main_foto.png";
+
+import add from "./add.png";
+import order from "./order.png";
+import upload from "./upload.png";
+import checklist from "./checklist.png";
 
 import menu_1 from "./menu_1.png";
 import menu_2 from "./menu_2.png";
@@ -88,7 +91,6 @@ import restaurants_2 from "./restaurant_2.png";
 import restaurants_3 from "./restaurant_3.png";
 import restaurants_4 from "./restaurant_4.png";
 
-
 export const assets = {
   add,
   order,
@@ -125,6 +127,8 @@ export const assets = {
   restaurants_2,
   restaurants_3,
   restaurants_4,
+  logo_test,
+  main_foto,
 };
 
 export const menu_list = [
