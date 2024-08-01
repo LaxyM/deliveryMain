@@ -1,5 +1,9 @@
 .menu-list {
-	width: 80%;
+	/* width: 80%; */
 	margin: auto;
 	padding-top: 80px;
+}
+
+.explore-menu {
+	margin-bottom: 40px;
 }
