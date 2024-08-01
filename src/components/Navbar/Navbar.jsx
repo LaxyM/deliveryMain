@@ -11,6 +11,7 @@ import { StoreContext } from '../../context/StoreContext'
 
 const Navbar = ({ setShowLogin, user }) => {
 
+	const [menu, setMenu] = React.useState('home')
 
 	const { getTotalCartCount, getTotalCartAmount } =
 		React.useContext(StoreContext)
