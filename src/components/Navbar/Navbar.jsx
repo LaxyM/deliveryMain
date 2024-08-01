@@ -1,17 +1,16 @@
 /* eslint-disable react/prop-types */
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import "./Navbar.css";
-import { assets } from "../../assets/assets";
+import './Navbar.css'
+import { assets } from '../../assets/assets'
 
 const Navbar = ({ setShowLogin, user }) => {
-  const [menu, setMenu] = React.useState("home");
+	const [menu, setMenu] = React.useState('home')
 
-
-  return (
+	return (
 		<div className='navbar'>
-			<img src={assets.logo} alt='' className='logo' />
+			<img src={assets.logo_test} alt='' className='logo' />
 
 			<ul className='navbar-menu'>
 				<li
@@ -65,6 +64,6 @@ const Navbar = ({ setShowLogin, user }) => {
 			</div>
 		</div>
 	)
-};
+}
 
-export default Navbar;
+export default Navbar

@@ -10,7 +10,7 @@ import Menu from './pages/Menu/Menu'
 
 function App() {
 	const [showLogin, setShowLogin] = useState(false)
-	const [user, setUser] = useState(null) // состояние для текущего пользователя
+	const [user, setUser] = useState(null)
 	const location = useLocation()
 
 	const isAdminRoute = location.pathname.startsWith('/admin')
