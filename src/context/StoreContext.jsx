@@ -43,6 +43,9 @@ const StoreContextProvider = (props) => {
     return totalAmount;
   };
 
+
+
+
   const fetchFoodList = async () => {
     try {
       const response = await axios.get(url + "/api/dishes/dishes");
@@ -52,6 +55,7 @@ const StoreContextProvider = (props) => {
       console.error("Error fetching food list:", error);
     }
   };
+
 
   const fetchMenuList = async () => {
     try {
@@ -71,15 +75,18 @@ const StoreContextProvider = (props) => {
     loadDate();
   }, []);
 
-  const contextValue = {
-    cartItems,
-    setCartItems,
-    addToCart,
-    removeFromCart,
-    getTotalCartAmount,
-    foodList,
-    menuList,
-  };
+
+	const contextValue = {
+		cartItems,
+		setCartItems,
+		addToCart,
+		removeFromCart,
+		getTotalCartCount,
+		foodList,
+		menuList,
+		getTotalCartAmount,
+	}
+
 
   return (
     <StoreContext.Provider value={contextValue}>
