@@ -1,12 +1,16 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { Badge } from 'antd'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
+import { StoreContext } from '../../context/StoreContext'
 
 const Navbar = ({ setShowLogin, user }) => {
 	const [menu, setMenu] = React.useState('home')
+
+	const { getTotalCartCount, getTotalCartAmount } =
+		React.useContext(StoreContext)
 
 	return (
 		<div className='navbar'>
@@ -55,10 +59,23 @@ const Navbar = ({ setShowLogin, user }) => {
 			<div className='navbar-right'>
 				<img src={assets.search_icon} alt='' />
 				<div className='navbar-search-icon'>
-					<img src={assets.basket_icon} alt='' />
+					<Link to='/cart'>
+						<Badge count={getTotalCartCount()} showZero color='#CA054D'>
+							<img src={assets.basket_icon} alt='' />
+						</Badge>
+					</Link>
 				</div>
 				<div className='navbar-search-icon'>
-					<img src={assets.sack_dollar} alt='' />
+					<Link to='/cart'>
+						<Badge
+							count={getTotalCartAmount() === 0 ? 0 : getTotalCartAmount()}
+							showZero
+							color='#45B69C'
+							overflowCount={999}
+						>
+							<img src={assets.sack_dollar} alt='' />
+						</Badge>
+					</Link>
 				</div>
 				<button onClick={() => setShowLogin(true)}>Sign in</button>
 			</div>

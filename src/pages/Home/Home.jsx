@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import "./Home.css";
 import TipsBlock from "../../components/TipsBlock/TipsBlock";
-import FoodDisplay from "../../components/FoodDisplay/FoodDisplay";
+import CarouselFoodDisplay from "../../components/CarouselFoodDisplay/CarouselFoodDisplay";
 import Restaurants from "../../components/Restaurants/Restaurants";
 import AboutUs from "../../components/AboutUs/AboutUs";
 
@@ -13,10 +13,11 @@ const Home = () => {
         <Header />
       </div>
       <div className="main-page">
+        <CarouselFoodDisplay />
         <TipsBlock />
         <Restaurants />
         <AboutUs />
-        {/* тут будет вся страница */}
+        
       </div>
     </>
   );
