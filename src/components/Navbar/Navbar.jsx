@@ -1,25 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Badge } from 'antd'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
 import { StoreContext } from '../../context/StoreContext'
 
-
-
-const Navbar = ({ setShowLogin, user }) => {
-
+const Navbar = ({ setShowLogin }) => {
 	const [menu, setMenu] = React.useState('home')
-
-	const { getTotalCartCount, getTotalCartAmount } =
-		React.useContext(StoreContext)
+	const { getTotalCartCount, getTotalCartAmount, user, logoutUser } =
+		useContext(StoreContext)
 
 	return (
 		<div className='navbar'>
-			<Link to="/">
-        <img src={assets.logo_test} alt="" className="logo" />
-      </Link>
-      
+			<Link to='/'>
+				<img src={assets.logo_test} alt='' className='logo' />
+			</Link>
+
 			<ul className='navbar-menu'>
 				<li
 					onClick={() => setMenu('home')}
@@ -49,7 +45,7 @@ const Navbar = ({ setShowLogin, user }) => {
 					onClick={() => setMenu('contact')}
 					className={menu === 'contact' ? 'active' : ''}
 				>
-				  <a href="#footer">Contact</a> 
+					<a href='#footer'>Contact</a>
 				</li>
 				{user && user.isAdmin && (
 					<li
@@ -81,11 +77,19 @@ const Navbar = ({ setShowLogin, user }) => {
 						</Badge>
 					</Link>
 				</div>
-				<button onClick={() => setShowLogin(true)}>Sign in</button>
+				{user ? (
+					<div className='navbar-user'>
+						<p className='navbar-welcome'>Welcome, {user.name}!</p>
+						<button onClick={logoutUser} className='navbar-logout'>
+							Log out
+						</button>
+					</div>
+				) : (
+					<button onClick={() => setShowLogin(true)}>Sign in</button>
+				)}
 			</div>
 		</div>
 	)
 }
 
-
-export default Navbar;
+export default Navbar

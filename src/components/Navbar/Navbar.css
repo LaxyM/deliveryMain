@@ -27,7 +27,6 @@
 .navbar-right img {
 	width: 30px;
 	height: 30px;
-
 }
 
 .navbar button {
@@ -49,7 +48,6 @@
 .navbar .active {
 	padding-bottom: 2px;
 	border-bottom: 3px solid #49557e;
-	
 }
 
 .navbar li {
@@ -58,6 +56,33 @@
 
 .navbar-search-icon {
 	position: relative;
+}
+
+/* Новые стили для приветствия и кнопки выхода */
+.navbar-user {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.navbar-welcome {
+	font-size: 16px;
+	color: #49557e;
+	font-weight: bold;
+}
+
+.navbar-logout {
+	background-color: #ff4d4d; /* Красный цвет для кнопки выхода */
+	color: white;
+	border: none;
+	padding: 8px 20px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.navbar-logout:hover {
+	background-color: #cc0000; /* Темный красный цвет при наведении */
 }
 
 @media (max-width:1050px) {

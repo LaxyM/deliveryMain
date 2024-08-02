@@ -5,46 +5,35 @@ export const StoreContext = createContext(null)
 
 const StoreContextProvider = props => {
 	const [cartItems, setCartItems] = useState({})
-	const url = 'https://66a5f78923b29e17a1a1615f.mockapi.io/'
-	const url2 = 'https://66a94cd0613eced4eba50bb0.mockapi.io/'
-	const url3 = 'https://66acd002f009b9d5c7337a17.mockapi.io/users'
 	const [foodList, setFoodList] = useState([])
 	const [menuList, setMenuList] = useState([])
 	const [error, setError] = useState(null)
+	const [user, setUser] = useState(null) // Добавлено состояние пользователя
+
+	const url = 'https://66a5f78923b29e17a1a1615f.mockapi.io/'
+	const url2 = 'https://66a94cd0613eced4eba50bb0.mockapi.io/'
+	const url3 = 'https://66acd002f009b9d5c7337a17.mockapi.io/users'
 
 	const addToCart = itemId => {
-		if (!cartItems[itemId]) {
-			setCartItems(prev => ({ ...prev, [itemId]: 1 }))
-		} else {
-			setCartItems(prev => ({ ...prev, [itemId]: prev[itemId] + 1 }))
-		}
+		setCartItems(prev => ({ ...prev, [itemId]: (prev[itemId] || 0) + 1 }))
 	}
 
 	const removeFromCart = itemId => {
-		setCartItems(prev => ({ ...prev, [itemId]: prev[itemId] - 1 }))
+		setCartItems(prev => ({ ...prev, [itemId]: (prev[itemId] || 0) - 1 }))
 	}
 
 	const getTotalCartCount = () => {
-		let totalCount = 0
-		for (const item in cartItems) {
-			if (cartItems[item] > 0) {
-				totalCount += cartItems[item]
-			}
-		}
-		return totalCount
+		return Object.values(cartItems).reduce(
+			(total, count) => total + (count > 0 ? count : 0),
+			0
+		)
 	}
 
 	const getTotalCartAmount = () => {
-		let totalAmount = 0
-		for (const item in cartItems) {
-			if (cartItems[item] > 0) {
-				let itemInfo = foodList.find(product => product._id === item)
-				if (itemInfo) {
-					totalAmount += itemInfo.price * cartItems[item]
-				}
-			}
-		}
-		return totalAmount
+		return Object.entries(cartItems).reduce((total, [itemId, count]) => {
+			const item = foodList.find(product => product._id === itemId)
+			return total + (item ? item.price * count : 0)
+		}, 0)
 	}
 
 	const fetchFoodList = async () => {
@@ -71,12 +60,16 @@ const StoreContextProvider = props => {
 				`${url3}?email=${email}&password=${password}`
 			)
 			if (response.data.length > 0) {
-				return response.data[0]
+				const user = response.data[0]
+				setUser(user)
+				localStorage.setItem('user', JSON.stringify(user))
+				return user
 			} else {
-				throw new Error('User not found')
+				setError('User not found')
+				return null
 			}
 		} catch (error) {
-			setError(error.message)
+			setError('Error logging in. Please try again.')
 			console.error('Error logging in:', error)
 			return null
 		}
@@ -98,12 +91,24 @@ const StoreContextProvider = props => {
 		}
 	}
 
+	const logoutUser = () => {
+		setUser(null)
+		localStorage.removeItem('user')
+	}
+
 	useEffect(() => {
 		async function loadData() {
 			await fetchFoodList()
 			await fetchMenuList()
 		}
 		loadData()
+	}, [])
+
+	useEffect(() => {
+		const storedUser = localStorage.getItem('user')
+		if (storedUser) {
+			setUser(JSON.parse(storedUser))
+		}
 	}, [])
 
 	const contextValue = {
@@ -117,7 +122,9 @@ const StoreContextProvider = props => {
 		getTotalCartAmount,
 		loginUser,
 		registerUser,
+		logoutUser, // Добавлена функция для выхода
 		error,
+		user, // Добавлена информация о пользователе
 	}
 
 	return (
