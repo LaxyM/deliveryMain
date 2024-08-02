@@ -7,41 +7,40 @@ const PlaceOrder = () => {
   return (
     <form className="place-order">
       <div className="place-order-left">
-        <p className="title">Информация о доставке</p>
+        <p className="title">Information about delivery</p>
         <div className="multi-fields">
-          <input type="text" placeholder="Имя" />
-          <input type="text" placeholder="Фамилия" />
+          <input type="text" placeholder="First name" />
+          <input type="text" placeholder="Last name" />
         </div>
-        <input type="email" placeholder="Электронная почта" />
-        <input type="text" placeholder="Улица" />
+        <input type="email" placeholder="Email address" />
+        <input type="text" placeholder="Street" />
         <div className="multi-fields">
-          <input type="text" placeholder="Город" />
-          <input type="text" placeholder="Штат" />
+          <input type="text" placeholder="City" />
         </div>
         <div className="multi-fields">
-          <input type="text" placeholder="Почтовый индекс" />
-          <input type="text" placeholder="Страна" />
+          <input type="text" placeholder="Zip code" />
+          <input type="text" placeholder="Country" />
         </div>
-        <input type="text" placeholder="Телефон" />
+        <input type="text" placeholder="Phone" />
       </div>
       <div className="place-order-right">
         <div className="cart-total">
-          <h2>Итоги корзины</h2>
+          <h2>Cart Totals</h2>
           <div className="cart-total-details">
-            <p>Подытог</p>
+            <p>Subtotal</p>
             <p>{getTotalCartAmount()}$</p>
           </div>
           <hr />
           <div className="cart-total-details">
-            <p>Стоимость доставки</p>
+            <p>Delivery Fee</p>
             <p>{getTotalCartAmount() === 0 ? 0 : 2}$</p>
           </div>
           <hr />
           <div className="cart-total-details">
-            <b>Итого</b>
-            <b>{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}$</b>
+            <b>Total</b>
+            {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}$
           </div>
-          <button>ПЕРЕЙТИ К ОПЛАТЕ</button>
+          <button>PROCEED TO CHECKOUT</button>
         </div>
       </div>
     </form>
