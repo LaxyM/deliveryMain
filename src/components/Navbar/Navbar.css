@@ -6,7 +6,7 @@
 }
 
 .navbar .logo {
-	width: 150px;
+	width: 100px;
 }
 
 .navbar-menu {
@@ -72,7 +72,7 @@
 }
 
 .navbar-logout {
-	background-color: #ff4d4d; /* Красный цвет для кнопки выхода */
+	background-color: #ff4d4d;
 	color: white;
 	border: none;
 	padding: 8px 20px;
@@ -82,8 +82,7 @@
 }
 
 .navbar-logout:hover {
-	background-color: #cc0000; /* Темный красный цвет при наведении */
-}
+	background-color: #cc0000; 
 
 @media (max-width:1050px) {
 	.navbar .logo {

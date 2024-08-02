@@ -15,30 +15,43 @@ const StoreContextProvider = props => {
 	const url3 = 'https://66acd002f009b9d5c7337a17.mockapi.io/users'
 
 	const addToCart = itemId => {
-		setCartItems(prev => ({ ...prev, [itemId]: (prev[itemId] || 0) + 1 }))
+		if (!cartItems[itemId]) {
+			setCartItems(prev => ({ ...prev, [itemId]: 1 }))
+		} else {
+			setCartItems(prev => ({ ...prev, [itemId]: prev[itemId] + 1 }))
+		}
 	}
 
 	const removeFromCart = itemId => {
-		setCartItems(prev => ({ ...prev, [itemId]: (prev[itemId] || 0) - 1 }))
+		setCartItems(prev => ({ ...prev, [itemId]: prev[itemId] - 1 }))
 	}
 
 	const getTotalCartCount = () => {
-		return Object.values(cartItems).reduce(
-			(total, count) => total + (count > 0 ? count : 0),
-			0
-		)
+		let totalCount = 0
+
+		for (const item in cartItems) {
+			if (cartItems[item] > 0) {
+				totalCount += cartItems[item]
+			}
+		}
+		return totalCount
 	}
 
 	const getTotalCartAmount = () => {
-		return Object.entries(cartItems).reduce((total, [itemId, count]) => {
-			const item = foodList.find(product => product._id === itemId)
-			return total + (item ? item.price * count : 0)
-		}, 0)
+		let totalAmount = 0
+		for (const item in cartItems) {
+			if (cartItems[item] > 0) {
+				let itemInfo = foodList.find(product => product._id === item)
+				totalAmount += itemInfo.price * cartItems[item]
+			}
+		}
+		return totalAmount
 	}
 
 	const fetchFoodList = async () => {
 		try {
 			const response = await axios.get(url + '/api/dishes/dishes')
+			console.log('Food data received:', response.data)
 			setFoodList(response.data)
 		} catch (error) {
 			console.error('Error fetching food list:', error)
@@ -48,6 +61,7 @@ const StoreContextProvider = props => {
 	const fetchMenuList = async () => {
 		try {
 			const response = await axios.get(url2 + 'api/dishes/menu/dishes')
+			console.log('Menu data received:', response.data)
 			setMenuList(response.data)
 		} catch (error) {
 			console.error('Error fetching menu list:', error)

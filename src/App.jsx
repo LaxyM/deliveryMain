@@ -23,7 +23,9 @@ function App() {
 			{showLogin && <Login setShowLogin={setShowLogin} setUser={setUser} />}
 			<header className='main-header'>
 				<div className='navbar-container'>
-					{user && user.isAdmin ? null : <Navbar setShowLogin={setShowLogin} />}
+					{user && user.isAdmin ? null : (
+						<Navbar setShowLogin={setShowLogin} user={user} setUser={setUser} />
+					)}
 				</div>
 			</header>
 			<ScrollToTop />
@@ -34,7 +36,12 @@ function App() {
 					<Route path='/more-restaurants' element={<MoreRestaurants />} />
 					<Route path='/cart' element={<Cart />} />
 					<Route path='/place-order' element={<PlaceOrder />} />
-					<Route path='/admin/*' element={user && user.isAdmin ? <AdminPanel />:<Navigate to='/' />} />
+					<Route
+						path='/admin/*'
+						element={
+							user && user.isAdmin ? <AdminPanel /> : <Navigate to='/' />
+						}
+					/>
 				</Routes>
 			</div>
 			{!isAdminRoute && <Footer />}

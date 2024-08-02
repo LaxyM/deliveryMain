@@ -1,14 +1,21 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Badge } from 'antd'
+import { Badge, Avatar, Space, Button } from 'antd'
+import { UserOutlined, LogoutOutlined } from '@ant-design/icons'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
 import { StoreContext } from '../../context/StoreContext'
 
-const Navbar = ({ setShowLogin }) => {
+const Navbar = ({ setShowLogin, user, setUser }) => {
 	const [menu, setMenu] = React.useState('home')
-	const { getTotalCartCount, getTotalCartAmount, user, logoutUser } =
-		useContext(StoreContext)
+	const { getTotalCartCount, getTotalCartAmount } =
+		React.useContext(StoreContext)
+
+	const handleLogout = () => {
+		setUser(null) // Очистить текущего пользователя
+		localStorage.removeItem('user') // Очистить данные пользователя из локального хранилища
+		// Здесь можно добавить логику для редиректа, если нужно
+	}
 
 	return (
 		<div className='navbar'>
@@ -79,10 +86,15 @@ const Navbar = ({ setShowLogin }) => {
 				</div>
 				{user ? (
 					<div className='navbar-user'>
-						<p className='navbar-welcome'>Welcome, {user.name}!</p>
-						<button onClick={logoutUser} className='navbar-logout'>
-							Log out
-						</button>
+						<Avatar size={38} icon={<UserOutlined />} />
+						<div className='navbar-username'>{user.name}</div>
+						<Button
+							className='navbar-logout'
+							icon={<LogoutOutlined />}
+							onClick={handleLogout}
+						>
+							Logout
+						</Button>
 					</div>
 				) : (
 					<button onClick={() => setShowLogin(true)}>Sign in</button>
