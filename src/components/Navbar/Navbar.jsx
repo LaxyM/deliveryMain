@@ -49,7 +49,7 @@ const Navbar = ({ setShowLogin, user }) => {
 					onClick={() => setMenu('contact')}
 					className={menu === 'contact' ? 'active' : ''}
 				>
-					Contact
+				  <a href="#footer">Contact</a> 
 				</li>
 				{user && user.isAdmin && (
 					<li

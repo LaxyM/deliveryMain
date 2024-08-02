@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import { Route, Routes, Navigate, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home/Home'
@@ -9,6 +9,7 @@ import AdminPanel from './components/AdminPanel/AdminPanel'
 import Menu from './pages/Menu/Menu'
 import Cart from './pages/Cart/Cart'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
 	const [showLogin, setShowLogin] = useState(false)
@@ -25,6 +26,7 @@ function App() {
 					{user && user.isAdmin ? null : <Navbar setShowLogin={setShowLogin} />}
 				</div>
 			</header>
+			<ScrollToTop />
 			<div className='app'>
 				<Routes>
 					<Route path='/' element={<Home />} />
