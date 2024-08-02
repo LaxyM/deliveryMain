@@ -88,6 +88,7 @@ const StoreContextProvider = props => {
 				name,
 				email,
 				password,
+				isAdmin: false,
 			})
 			return response.data
 		} catch (error) {
