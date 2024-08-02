@@ -73,7 +73,7 @@ const StoreContextProvider = props => {
 			if (response.data.length > 0) {
 				return response.data[0]
 			} else {
-				throw new Error('User not found or invalid credentials')
+				throw new Error('User not found')
 			}
 		} catch (error) {
 			setError(error.message)
@@ -88,7 +88,7 @@ const StoreContextProvider = props => {
 				name,
 				email,
 				password,
-				isAdmin: false,
+				isAdmin: false, // Assuming new users are not admins by default
 			})
 			return response.data
 		} catch (error) {

@@ -9,11 +9,13 @@ const Login = ({ setShowLogin, setUser }) => {
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+	const [errorMessage, setErrorMessage] = useState('')
 	const navigate = useNavigate()
 	const { loginUser, registerUser, error } = useContext(StoreContext)
 
 	const handleSubmit = async e => {
 		e.preventDefault()
+		setErrorMessage('') // Clear any previous error messages
 		if (currState === 'Login') {
 			const user = await loginUser(email, password)
 			if (user) {
@@ -21,6 +23,8 @@ const Login = ({ setShowLogin, setUser }) => {
 				localStorage.setItem('isAuthenticated', 'true')
 				navigate(user.isAdmin ? '/admin' : '/')
 				setShowLogin(false)
+			} else {
+				setErrorMessage('User not found. Please check your credentials.')
 			}
 		} else {
 			const user = await registerUser(name, email, password)
@@ -29,6 +33,8 @@ const Login = ({ setShowLogin, setUser }) => {
 				localStorage.setItem('isAuthenticated', 'true')
 				navigate('/')
 				setShowLogin(false)
+			} else {
+				setErrorMessage('Registration failed. Please try again.')
 			}
 		}
 	}
@@ -45,7 +51,7 @@ const Login = ({ setShowLogin, setUser }) => {
 					/>
 				</div>
 				<div className='login-inputs'>
-					{currState === 'Login' ? null : (
+					{currState === 'Sign Up' && (
 						<input
 							type='text'
 							placeholder='Your name'
@@ -71,7 +77,7 @@ const Login = ({ setShowLogin, setUser }) => {
 					<button type='submit'>
 						{currState === 'Sign Up' ? 'Create account' : 'Login'}
 					</button>
-					{error && <p className='error'>{error}</p>}
+					{errorMessage && <p className='error'>{errorMessage}</p>}
 					<div className='login-condition'>
 						<input type='checkbox' required />
 						<p>By continuing, I agree to the terms of use & privacy policy.</p>
