@@ -29,13 +29,22 @@ const Orders = () => {
 		}
 	}
 
+	const handleRefresh = () => {
+		fetchAllOrders()
+	}
+
 	useEffect(() => {
 		fetchAllOrders()
 	}, [])
 
 	return (
 		<div className='order-add'>
-			<h3>Order Page</h3>
+			<div className='order-header'>
+				<h3>Order Page</h3>
+				<button className='refresh-button' onClick={handleRefresh}>
+					Refresh Orders
+				</button>
+			</div>
 			<div className='order-list'>
 				{orders.map(order => (
 					<div key={order.id} className='order-item'>

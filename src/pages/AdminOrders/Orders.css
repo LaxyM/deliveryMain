@@ -1,3 +1,10 @@
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Отступ снизу для разделения с контентом */
+}
+
 .order-item {
   display: grid;
   grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
@@ -54,7 +61,22 @@
   background-color: #ff4c4c; /* Более темный красный при наведении */
 }
 
-.delete-order-button:focus {
+.refresh-button {
+  background-color: #e0e0e0; /* Светло-серый цвет кнопки для менее заметного стиля */
+  border: none;
+  color: #505050;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+}
+
+.refresh-button:hover {
+  background-color: #c0c0c0; /* Более темный серый при наведении */
+}
+
+.refresh-button:focus {
   outline: none;
 }
 
