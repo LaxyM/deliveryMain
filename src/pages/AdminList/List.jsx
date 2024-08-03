@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import './List.css'
 import { StoreContext } from '../../context/StoreContext'
 import { Pagination } from 'antd'
 
 const List = () => {
-	const { foodList, removeFood } = React.useContext(StoreContext)
+	const { foodList, removeFood, fetchFoodList } = useContext(StoreContext)
 	const [currentPage, setCurrentPage] = useState(1)
 	const pageSize = 7 // Количество элементов на одной странице
+
+	useEffect(() => {
+		fetchFoodList()
+	}, [])
 
 	const handlePageChange = page => {
 		setCurrentPage(page)
@@ -18,7 +22,12 @@ const List = () => {
 
 	return (
 		<div className='list'>
-			<p>All Dishes List</p>
+			<div className='list-header'>
+				<p>All Dishes List</p>
+				<button className='refresh-button' onClick={fetchFoodList}>
+					Refresh
+				</button>
+			</div>
 			<div className='list-table'>
 				<div className='list-table-format title'>
 					<b>Image</b>
@@ -33,9 +42,12 @@ const List = () => {
 						<p>{item.name}</p>
 						<p>{item.category}</p>
 						<p>${item.price}</p>
-						<p onClick={() => removeFood(item._id)} className='cursor'>
-							X
-						</p>
+						<button
+							className='delete-button'
+							onClick={() => removeFood(item._id)}
+						>
+							Delete
+						</button>
 					</div>
 				))}
 			</div>

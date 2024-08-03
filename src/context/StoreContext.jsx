@@ -142,8 +142,7 @@ const StoreContextProvider = props => {
 	const removeFood = async foodId => {
 		try {
 			await axios.delete(`${url}/api/dishes/dishes/${foodId}`)
-			// Обновляем список блюд после удаления
-			fetchFoodList()
+			fetchFoodList() // Обновляем список блюд после удаления
 		} catch (error) {
 			console.error('Error deleting food:', error)
 			setError('Error deleting food')
@@ -183,6 +182,7 @@ const StoreContextProvider = props => {
 		error,
 		user,
 		removeFood,
+		fetchFoodList, // Экспортируем функцию для обновления списка блюд
 	}
 
 	return (
