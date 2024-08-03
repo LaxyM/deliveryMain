@@ -1,25 +1,28 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Badge } from 'antd'
+import { Badge, Avatar, Space, Button } from 'antd'
+import { UserOutlined, LogoutOutlined } from '@ant-design/icons'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
 import { StoreContext } from '../../context/StoreContext'
 
-
-
-const Navbar = ({ setShowLogin, user }) => {
-
+const Navbar = ({ setShowLogin, user, setUser }) => {
 	const [menu, setMenu] = React.useState('home')
-
 	const { getTotalCartCount, getTotalCartAmount } =
 		React.useContext(StoreContext)
 
+	const handleLogout = () => {
+		setUser(null) // Очистить текущего пользователя
+		localStorage.removeItem('user') // Очистить данные пользователя из локального хранилища
+		// Здесь можно добавить логику для редиректа, если нужно
+	}
+
 	return (
 		<div className='navbar'>
-			<Link to="/">
-        <img src={assets.logo_test} alt="" className="logo" />
-      </Link>
-      
+			<Link to='/'>
+				<img src={assets.logo_test} alt='' className='logo' />
+			</Link>
+
 			<ul className='navbar-menu'>
 				<li
 					onClick={() => setMenu('home')}
@@ -49,7 +52,7 @@ const Navbar = ({ setShowLogin, user }) => {
 					onClick={() => setMenu('contact')}
 					className={menu === 'contact' ? 'active' : ''}
 				>
-				  <a href="#footer">Contact</a> 
+					<a href='#footer'>Contact</a>
 				</li>
 				{user && user.isAdmin && (
 					<li
@@ -81,11 +84,24 @@ const Navbar = ({ setShowLogin, user }) => {
 						</Badge>
 					</Link>
 				</div>
-				<button onClick={() => setShowLogin(true)}>Sign in</button>
+				{user ? (
+					<div className='navbar-user'>
+						<Avatar size={38} icon={<UserOutlined />} />
+						<div className='navbar-username'>{user.name}</div>
+						<Button
+							className='navbar-logout'
+							icon={<LogoutOutlined />}
+							onClick={handleLogout}
+						>
+							Logout
+						</Button>
+					</div>
+				) : (
+					<button onClick={() => setShowLogin(true)}>Sign in</button>
+				)}
 			</div>
 		</div>
 	)
 }
 
-
-export default Navbar;
+export default Navbar
