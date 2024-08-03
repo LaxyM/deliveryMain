@@ -139,6 +139,17 @@ const StoreContextProvider = props => {
 		localStorage.removeItem('user')
 	}
 
+	const removeFood = async foodId => {
+		try {
+			await axios.delete(`${url}/api/dishes/dishes/${foodId}`)
+			// Обновляем список блюд после удаления
+			fetchFoodList()
+		} catch (error) {
+			console.error('Error deleting food:', error)
+			setError('Error deleting food')
+		}
+	}
+
 	useEffect(() => {
 		async function loadData() {
 			await fetchFoodList()
@@ -171,6 +182,7 @@ const StoreContextProvider = props => {
 		placeOrder,
 		error,
 		user,
+		removeFood,
 	}
 
 	return (
