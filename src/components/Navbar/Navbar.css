@@ -1,8 +1,10 @@
 .navbar {
-	padding: 20px 0px;
+	padding: 20px 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
+	overflow: hidden;
 }
 
 .navbar .logo {
@@ -15,13 +17,23 @@
 	gap: 20px;
 	color: #49557e;
 	font-size: 18px;
+	position: absolute; 
+    left: 50%;
+    transform: translateX(-50%);
+	margin: 0; 
+    padding: 0; 
+    white-space: nowrap; 
+}
+
+.navbar-menu.open {
+	display: flex;
 }
 
 .navbar-right {
 	display: flex;
 	align-items: center;
 	gap: 30px;
-	justify-content: space-between;
+	z-index: 1;
 }
 
 .navbar-right img {
@@ -33,7 +45,7 @@
 	background-color: transparent;
 	font-size: 16px;
 	color: #49557e;
-	border: 1px solid #161515;
+	border: 1px solid  #49557e;
 	padding: 10px 30px;
 	border-radius: 8px;
 	cursor: pointer;
@@ -41,7 +53,7 @@
 }
 
 .navbar button:hover {
-	background-color: #2d2c42;
+	background-color:#49557e;
 	color: white;
 }
 
@@ -54,9 +66,6 @@
 	cursor: pointer;
 }
 
-.navbar-search-icon {
-	position: relative;
-}
 
 /* Новые стили для приветствия и кнопки выхода */
 .navbar-user {
@@ -82,9 +91,16 @@
 }
 
 .navbar-logout:hover {
-	background-color: #cc0000; 
+	background-color: #cc0000;
+}
 
-@media (max-width:1050px) {
+.navbar-toggle {
+	display: none;
+	cursor: pointer;
+	font-size: 24px;
+}
+
+@media (max-width: 1050px) {
 	.navbar .logo {
 		width: 140px;
 	}
@@ -107,7 +123,7 @@
 	}
 }
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
 	.navbar .logo {
 		width: 120px;
 	}
@@ -131,8 +147,24 @@
 	}
 }
 
-@media (max-width:750px) {
+@media (max-width: 750px) {
 	.navbar-menu {
 		display: none;
+		flex-direction: column;
+		position: absolute;
+		top: 80px; 
+		right: 0;
+		width: 100%;
+		background-color: white;
+		border: 1px solid #ddd;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	}
+
+	.navbar-menu.open {
+		display: flex;
+	}
+
+	.navbar-toggle {
+		display: block;
 	}
 }

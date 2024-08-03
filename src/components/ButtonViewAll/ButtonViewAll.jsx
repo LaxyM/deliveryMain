@@ -1,12 +1,12 @@
-import React from 'react'
-import './ButtonViewAll.css'
+import React from 'react';
+import './ButtonViewAll.css';
 
-const ButtonViewAll = () => {
-	return (
-		<div>
-			<button className='btn'>View all</button>
-		</div>
-	)
-}
+const ButtonViewAll = ({ text, type = 'button', onClick }) => {
+  return (
+    <button className='btn' type={type} onClick={onClick}>
+      {text}
+    </button>
+  );
+};
 
-export default ButtonViewAll
+export default ButtonViewAll;
