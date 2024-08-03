@@ -1,4 +1,6 @@
+/* Основные стили */
 .more-restaurants {
+  margin-top: 20px;
   padding: 20px;
   background-color: #f5f5f5;
 }
@@ -23,13 +25,13 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  height: 300px; /* Фиксированная высота карточек */
+  height: 300px; 
 }
 
 .restaurant-card img {
   width: 200px;
-  height: 100%; /* Изображение растягивается на всю высоту карточки */
-  object-fit: cover; /* Обеспечивает покрытие всего блока */
+  height: 100%; 
+  object-fit: cover; 
 }
 
 .restaurant-info {
@@ -60,21 +62,120 @@
   margin-bottom: 10px;
 }
 
+/* Кнопка открытия модального окна */
+.open-modal-button {
+  display: block;
+  margin: 30px auto;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: #7B61FF;
+  background-color: #F6F4FF;
+  border: 2px solid #7B61FF;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.open-modal-button:hover {
+  background-color: #dcdafe;
+  transform: scale(1.05);
+}
+
+/* Стили для модального окна */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  animation: slideDown 0.5s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #7b61ff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Стили формы бронирования */
 .booking-form {
   margin-top: 30px;
   padding: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 500px; /* Максимальная ширина формы */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px; 
   margin-left: auto;
-  margin-right: auto; /* Центрирование формы по горизонтали */
+  margin-right: auto; 
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Анимация для формы */
+.booking-form-appear {
+  animation: formAppear 0.5s ease-out;
+}
+
+@keyframes formAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .booking-form h2 {
   font-size: 24px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: #333;
   text-align: center;
 }
@@ -82,7 +183,7 @@
 .booking-form form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .booking-form label {
@@ -91,20 +192,21 @@
 }
 
 .booking-form input {
-  padding: 10px;
-  font-size: 16px;
+  height: 30px;
+  padding: 8px;
+  font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
 .booking-form .btn {
   width: 100%;
-  height: 40px;
+  height: 35px;
   background-color: #f6f4ff;
   border: none;
-  border-radius: 12px;
+  border-radius: 4px;
   color: #7b61ff;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   transition: 600ms ease;
   text-align: center;
