@@ -44,7 +44,7 @@ const List = () => {
 						<p>${item.price}</p>
 						<button
 							className='delete-button'
-							onClick={() => removeFood(item._id)}
+							onClick={() => removeFood(item.id)}
 						>
 							Delete
 						</button>
