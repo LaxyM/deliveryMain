@@ -1,5 +1,4 @@
 .footer {
-  
   color: #49557e;
   background-color: #181819;
   display: flex;
@@ -48,28 +47,37 @@
   cursor: default;
 }
 
+.footer-logo-container {
+  display: flex;
+  align-items: flex-end; 
+  gap: 30px; 
+}
+
 .footer-logo {
   width: 120px;
 }
 
-.footer-text {
-  width: 100%;
-}
-
-.footer-text p {
-  margin: 0;
-  padding-bottom: 15px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
 .footer-social-icons {
   display: flex;
+  flex-direction: row; 
+  align-items: flex-end; 
+  gap: 10px; 
 }
 
 .footer-social-icons img {
   width: 40px;
-  margin-right: 15px;
+}
+
+.footer-text {
+  text-align: left; 
+  width: 100%; 
+}
+
+.footer-text p {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .footer-newsletter {

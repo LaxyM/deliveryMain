@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Badge, Avatar, Button } from "antd";
 import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
+import { FaBars } from "react-icons/fa";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
-import { FaBars } from "react-icons/fa";
 
 const Navbar = ({ setShowLogin, user, setUser }) => {
-  const [menu, setMenu] = React.useState("home");
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const { getTotalCartCount } = React.useContext(StoreContext);
+  const [menu, setMenu] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { getTotalCartCount } = useContext(StoreContext);
 
   const handleLogout = () => {
     setUser(null);
@@ -24,14 +24,14 @@ const Navbar = ({ setShowLogin, user, setUser }) => {
   return (
     <div className="navbar">
       <Link to="/">
-        <img src={assets.logo_test} alt="" className="logo" />
+        <img src={assets.logo_test} alt="Logo" className="logo" />
       </Link>
 
-      <div className='navbar-toggle' onClick={toggleMenu}>
+      <div className="navbar-toggle" onClick={toggleMenu}>
         <FaBars />
       </div>
 
-      <ul className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
+      <ul className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
         <li
           onClick={() => setMenu("home")}
           className={menu === "home" ? "active" : ""}
@@ -74,8 +74,8 @@ const Navbar = ({ setShowLogin, user, setUser }) => {
 
       <div className="navbar-right">
         <Link to="/cart">
-          <Badge count={getTotalCartCount()} showZero color="#CA054D">
-            <img src={assets.basket_icon} alt="" />
+          <Badge count={getTotalCartCount()} showZero color="#49557e">
+            <img src={assets.basket_icon} alt="Cart" />
           </Badge>
         </Link>
         <div className="navbar-user">

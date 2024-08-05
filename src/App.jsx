@@ -9,7 +9,8 @@ import AdminPanel from './components/AdminPanel/AdminPanel'
 import Menu from './pages/Menu/Menu'
 import Cart from './pages/Cart/Cart'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from './components/ScrollToTop'
+import ReviewsPage from './pages/Reviews/Reviews'
 
 function App() {
 	const [showLogin, setShowLogin] = useState(false)
@@ -36,6 +37,7 @@ function App() {
 					<Route path='/more-restaurants' element={<MoreRestaurants />} />
 					<Route path='/cart' element={<Cart />} />
 					<Route path='/place-order' element={<PlaceOrder />} />
+					<Route path='/reviews' element={<ReviewsPage />} />
 					<Route
 						path='/admin/*'
 						element={

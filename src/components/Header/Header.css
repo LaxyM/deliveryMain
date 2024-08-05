@@ -50,6 +50,7 @@
   text-decoration: none;
   text-align: center;
   width: 200px;
+  transition: background-color 0.3s, color 0.3s;
   &:hover {
 	background-color: #dcdafe;
 	color: #7B61FF;
@@ -60,6 +61,10 @@
 @media (max-width: 1050px) {
   .header-contents {
     max-width: 45%;
+  }
+  .header-contents button {
+    width: 180px; 
+    padding: 0.7vw 2.8vw; 
   }
 }
 
@@ -73,6 +78,7 @@
   }
 
   .header-contents button {
-    padding: 2vw 4vw;
+    width: 160px; 
+    padding: 1.5vw 3vw;
   }
 }

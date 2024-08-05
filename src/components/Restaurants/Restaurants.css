@@ -71,7 +71,7 @@
 
   .flex-restaurants {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding-bottom: 40px;
   }
 
