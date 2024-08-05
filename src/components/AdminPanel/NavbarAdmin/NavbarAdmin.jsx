@@ -7,6 +7,7 @@ const NavbarAdmin = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("authToken"); 
+    navigate("/");
   };
 
   return (
