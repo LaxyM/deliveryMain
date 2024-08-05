@@ -54,7 +54,7 @@ const Navbar = ({ setShowLogin, user, setUser }) => {
           onClick={() => setMenu("reviews")}
           className={menu === "reviews" ? "active" : ""}
         >
-          Reviews
+          <Link to="/reviews">Reviews</Link> 
         </li>
         <li
           onClick={() => setMenu("contact")}
