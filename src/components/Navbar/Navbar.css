@@ -1,170 +1,170 @@
 .navbar {
-	padding: 20px 0;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: relative;
-	overflow: hidden;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .navbar .logo {
-	width: 100px;
+    width: 100px;
 }
 
 .navbar-menu {
-	display: flex;
-	list-style: none;
-	gap: 20px;
-	color: #49557e;
-	font-size: 18px;
-	position: absolute; 
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    color: #49557e;
+    font-size: 18px;
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
-	margin: 0; 
-    padding: 0; 
-    white-space: nowrap; 
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
 }
 
 .navbar-menu.open {
-	display: flex;
+    display: flex;
 }
 
 .navbar-right {
-	display: flex;
-	align-items: center;
-	gap: 30px;
-	z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    z-index: 1;
 }
 
 .navbar-right img {
-	width: 30px;
-	height: 30px;
+    width: 30px;
+    height: 30px;
 }
 
 .navbar button {
-	background-color: transparent;
-	font-size: 16px;
-	color: #49557e;
-	border: 1px solid  #49557e;
-	padding: 10px 30px;
-	border-radius: 8px;
-	cursor: pointer;
-	transition: 0.3s;
+    background-color: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid #49557e;
+    padding: 10px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .navbar button:hover {
-	background-color:#49557e;
-	color: white;
+    background-color: #49557e;
+    color: white;
 }
 
 .navbar .active {
-	padding-bottom: 2px;
-	border-bottom: 3px solid #49557e;
+    padding-bottom: 2px;
+    border-bottom: 3px solid #49557e;
 }
 
 .navbar li {
-	cursor: pointer;
+    cursor: pointer;
 }
-
 
 /* Новые стили для приветствия и кнопки выхода */
 .navbar-user {
-	display: flex;
-	align-items: center;
-	gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .navbar-welcome {
-	font-size: 16px;
-	color: #49557e;
-	font-weight: bold;
+    font-size: 16px;
+    color: #49557e;
+    font-weight: bold;
 }
 
 .navbar-logout {
-	background-color: #ff4d4d;
-	color: white;
-	border: none;
-	padding: 8px 20px;
-	border-radius: 8px;
-	cursor: pointer;
-	transition: background-color 0.3s;
+    background-color: #49557e;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .navbar-logout:hover {
-	background-color: #cc0000;
+    background-color: #3e4a6a;
 }
 
 .navbar-toggle {
-	display: none;
-	cursor: pointer;
-	font-size: 24px;
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
 }
 
 @media (max-width: 1050px) {
-	.navbar .logo {
-		width: 140px;
-	}
+    .navbar .logo {
+        width: 140px;
+    }
 
-	.navbar-menu {
-		gap: 20px;
-		font-size: 17px;
-	}
+    .navbar-menu {
+        gap: 20px;
+        font-size: 17px;
+    }
 
-	.navbar-right {
-		gap: 30px;
-	}
+    .navbar-right {
+        gap: 30px;
+    }
 
-	.navbar-right img {
-		width: 22px;
-	}
+    .navbar-right img {
+        width: 22px;
+    }
 
-	.navbar-right button {
-		padding: 8px 25px;
-	}
+    .navbar-right button {
+        padding: 8px 25px;
+    }
 }
 
 @media (max-width: 900px) {
-	.navbar .logo {
-		width: 120px;
-	}
+    .navbar .logo {
+        width: 120px;
+    }
 
-	.navbar-menu {
-		gap: 15px;
-		font-size: 16px;
-	}
+    .navbar-menu {
+        gap: 15px;
+        font-size: 16px;
+    }
 
-	.navbar-right {
-		gap: 20px;
-	}
+    .navbar-right {
+        gap: 20px;
+    }
 
-	.navbar-right img {
-		width: 20px;
-	}
+    .navbar-right img {
+        width: 20px;
+    }
 
-	.navbar-right button {
-		padding: 7px 20px;
-		font-size: 15px;
-	}
+    .navbar-right button {
+        padding: 7px 20px;
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 750px) {
-	.navbar-menu {
-		display: none;
-		flex-direction: column;
-		position: absolute;
-		top: 80px; 
-		right: 0;
-		width: 100%;
-		background-color: white;
-		border: 1px solid #ddd;
-		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-	}
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        background-color: white;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
 
-	.navbar-menu.open {
-		display: flex;
-	}
+    .navbar-menu.open {
+        display: flex;
+    }
 
-	.navbar-toggle {
-		display: block;
-	}
+    .navbar-toggle {
+        display: block;
+    }
 }

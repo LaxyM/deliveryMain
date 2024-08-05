@@ -1,9 +1,66 @@
 .menu-list {
-	/* width: 80%; */
-	margin: auto;
-	padding-top: 80px;
+  /* width: 80%; */
+  margin: auto;
+  padding-top: 80px;
 }
 
 .explore-menu {
-	margin-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.menu-list {
+  width: 90%;
+  margin: auto;
+  padding-top: 80px;
+  background-color: #f5f5f5;
+}
+
+.explore-menu {
+  margin-bottom: 40px;
+}
+
+.food-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .menu-list {
+    width: 95%;
+    padding-top: 60px;
+  }
+
+  .explore-menu {
+    margin-bottom: 30px;
+  }
+
+  .food-list {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-list {
+    width: 100%;
+    padding-top: 40px;
+  }
+
+  .explore-menu {
+    margin-bottom: 20px;
+  }
+
+  .food-list {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-list {
+    padding-top: 20px;
+  }
+
+  .food-list {
+    gap: 10px;
+  }
 }

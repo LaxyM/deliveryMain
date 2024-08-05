@@ -1,0 +1,206 @@
+/* Основные стили */
+.reviews-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+}
+
+.reviews-page h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+/* Стили для карточек отзывов */
+.review-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-name {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 5px;
+}
+
+.review-date {
+  font-size: 0.9em;
+  color: #777;
+  margin: 0 0 10px;
+}
+
+.review-text {
+  font-size: 1em;
+  color: #333;
+  margin: 0;
+}
+
+/* Кнопка открытия модального окна */
+.leave-review-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto;
+  padding: 25px 80px;
+  font-size: 18px;
+  color: #7b61ff;
+  background-color: #f6f4ff;
+  border: 2px solid #7b61ff;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  white-space: nowrap; 
+}
+
+.leave-review-btn:hover {
+  background-color: #dcdafe;
+  transform: scale(1.05);
+}
+
+/* Стили для модального окна */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  animation: slideDown 0.5s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #7b61ff;
+}
+
+/* Стили формы отзыва */
+.review-form {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-form h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.review-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.review-form label {
+  font-size: 16px;
+  color: #333;
+}
+
+.review-form input,
+.review-form textarea {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.review-form textarea {
+  resize: vertical;
+}
+
+.review-form .submit-btn {
+  width: 100%;
+  height: 35px;
+  background-color: #f6f4ff;
+  border: none;
+  border-radius: 4px;
+  color: #7b61ff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.review-form .submit-btn:hover {
+  background-color: #dcdafe;
+  transform: scale(1.05);
+}
+
+@media (max-width: 750px) {
+  .reviews-page {
+    padding: 10px;
+  }
+
+  .reviews-page h1 {
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .review-form {
+    padding: 15px;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    max-width: none;
+  }
+
+  .review-form h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .review-form label {
+    font-size: 14px;
+  }
+
+  .review-form input,
+  .review-form textarea {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .review-form .submit-btn {
+    height: 35px;
+    font-size: 14px;
+  }
+}

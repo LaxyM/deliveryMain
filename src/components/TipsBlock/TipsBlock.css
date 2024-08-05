@@ -57,16 +57,39 @@
 	line-height: 24px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1024px) {
     .container-tips {
-        width: 95%; 
-        padding: 0 10px; 
-        gap: 10px; 
+        width: 90%; 
+        padding: 0 20px; 
+        gap: 20px; 
     }
 
     .flex-tips {
         flex-direction: column; 
-        align-items: stretch;
+        align-items: center; 
+    }
+
+    .advice-block {
+        flex: 1 1 100%;
+    }
+
+    .title-tips-32 {
+        font-size: 28px; 
+        line-height: 34px;
+        text-align: center; 
+    }
+}
+
+@media (max-width: 768px) {
+    .container-tips {
+        width: 95%; 
+        padding: 0 15px; 
+        gap: 15px; 
+    }
+
+    .flex-tips {
+        flex-direction: column; 
+        align-items: center; 
     }
 
     .advice-block {
@@ -75,23 +98,55 @@
 
     .title-tips-32 {
         font-size: 24px; 
-        line-height: 28px; 
+        line-height: 30px;
+        text-align: center; 
+    }
+
+    .title-tips-24 {
+        font-size: 20px; 
+        line-height: 28px;
+        text-align: center; 
+    }
+}
+
+@media (max-width: 480px) {
+    .container-tips {
+        width: 95%; 
+        padding: 0 10px; 
+        gap: 10px; 
+    }
+
+    .flex-tips {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .advice-block {
+        flex: 1 1 100%;
+    }
+
+    .title-tips-32 {
+        font-size: 20px; 
+        line-height: 26px;
+        text-align: center; 
     }
 
     .title-tips-24 {
         font-size: 18px; 
         line-height: 24px;
+        text-align: center; 
     }
 
     .title-tips-16 {
         font-size: 14px; 
         line-height: 20px; 
-		text-align: center;
+        text-align: center; 
     }
 
     .advice-blocks-content {
         flex-direction: column; 
         gap: 20px;
+        text-align: center; 
     }
 
     .advice-blocks-content img {
