@@ -44,7 +44,7 @@ const StoreContextProvider = props => {
 
 	const getTotalCartAmount = () => {
 		return Object.entries(cartItems).reduce((total, [itemId, count]) => {
-			const item = foodList.find(product => product._id === itemId)
+			const item = foodList.find(product => product.id === itemId)
 			return item ? total + item.price * count : total
 		}, 0)
 	}
@@ -52,10 +52,10 @@ const StoreContextProvider = props => {
 	const getCartDetails = () => {
 		return Object.entries(cartItems)
 			.map(([itemId, quantity]) => {
-				const item = foodList.find(product => product._id === itemId)
+				const item = foodList.find(product => product.id === itemId)
 				if (item) {
 					return {
-						id: item._id,
+						id: item.id,
 						name: item.name,
 						price: item.price,
 						quantity: quantity,
