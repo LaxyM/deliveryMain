@@ -7,7 +7,7 @@ const TipsBlock = () => {
 		<section className='advice-tips'>
 			<div className='flex-tips'>
 				<div className='title-tips-32'>Our tips and advice</div>
-				<ButtonViewAll text="View All"/>
+				{/* <ButtonViewAll text="View All"/> */}
 			</div>
 
 			<div className='container-tips'>
