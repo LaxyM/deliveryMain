@@ -12,6 +12,8 @@ import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import ScrollToTop from './components/ScrollToTop'
 import ReviewsPage from './pages/Reviews/Reviews'
 import AppDownload from './components/AppDownload/AppDownload'
+import OrderConfirmation from './pages/OrderConfirmation/OrderConfirmation';
+
 
 function App() {
 	const [showLogin, setShowLogin] = useState(false)
@@ -39,6 +41,7 @@ function App() {
 					<Route path='/cart' element={<Cart />} />
 					<Route path='/place-order' element={<PlaceOrder />} />
 					<Route path='/reviews' element={<ReviewsPage />} />
+					<Route path='/order-confirmation' element={<OrderConfirmation />} />
 					<Route
 						path='/admin/*'
 						element={
