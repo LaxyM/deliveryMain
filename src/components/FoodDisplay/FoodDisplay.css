@@ -34,13 +34,13 @@
 }
 
 .container-food > div img {
-	width: 100%;
-	height: auto;
+	/* width: 100%;
+	height: auto; */
 	transition: transform 0.3s ease, box-shadow 0.3s ease; 
 	transform-origin: center center; 
 }
 .container-food > div:hover img {
-	transform: scale(1.1); 
+	transform: scale(1.04); 
 }
 
 .container-food > div:hover {
