@@ -8,44 +8,73 @@ const StoreContextProvider = props => {
 	const [foodList, setFoodList] = useState([])
 	const [menuList, setMenuList] = useState([])
 	const [error, setError] = useState(null)
-	const [user, setUser] = useState(null) // Добавлено состояние пользователя
+	const [user, setUser] = useState(null)
 
 	const url = 'https://66a5f78923b29e17a1a1615f.mockapi.io/'
 	const url2 = 'https://66a94cd0613eced4eba50bb0.mockapi.io/'
 	const url3 = 'https://66acd002f009b9d5c7337a17.mockapi.io/users'
+	const orderUrl = 'https://66acd002f009b9d5c7337a17.mockapi.io/orders'
 
 	const addToCart = itemId => {
-		if (!cartItems[itemId]) {
-			setCartItems(prev => ({ ...prev, [itemId]: 1 }))
-		} else {
-			setCartItems(prev => ({ ...prev, [itemId]: prev[itemId] + 1 }))
-		}
+		setCartItems(prev => ({
+			...prev,
+			[itemId]: (prev[itemId] || 0) + 1,
+		}))
 	}
 
 	const removeFromCart = itemId => {
-		setCartItems(prev => ({ ...prev, [itemId]: prev[itemId] - 1 }))
+		setCartItems(prev => {
+			const updatedItems = { ...prev }
+			if (updatedItems[itemId] > 1) {
+				updatedItems[itemId] -= 1
+			} else {
+				delete updatedItems[itemId]
+			}
+			return updatedItems
+		})
+	}
+
+	const clearCart = () => {
+		setCartItems({})
 	}
 
 	const getTotalCartCount = () => {
-		let totalCount = 0
-
-		for (const item in cartItems) {
-			if (cartItems[item] > 0) {
-				totalCount += cartItems[item]
-			}
-		}
-		return totalCount
+		return Object.values(cartItems).reduce((total, count) => total + count, 0)
 	}
 
 	const getTotalCartAmount = () => {
-		let totalAmount = 0
-		for (const item in cartItems) {
-			if (cartItems[item] > 0) {
-				let itemInfo = foodList.find(product => product._id === item)
-				totalAmount += itemInfo.price * cartItems[item]
-			}
+		return Object.entries(cartItems).reduce((total, [itemId, count]) => {
+			const item = foodList.find(product => product.id === itemId)
+			return item ? total + item.price * count : total
+		}, 0)
+	}
+
+	const getCartDetails = () => {
+		return Object.entries(cartItems)
+			.map(([itemId, quantity]) => {
+				const item = foodList.find(product => product.id === itemId)
+				if (item) {
+					return {
+						id: item.id,
+						name: item.name,
+						price: item.price,
+						quantity: quantity,
+						total: item.price * quantity,
+					}
+				}
+				return null
+			})
+			.filter(item => item !== null)
+	}
+
+	const placeOrder = async orderData => {
+		try {
+			const response = await axios.post(orderUrl, orderData)
+			return response.data
+		} catch (error) {
+			console.error('Error placing order:', error)
+			return null
 		}
-		return totalAmount
 	}
 
 	const fetchFoodList = async () => {
@@ -95,7 +124,7 @@ const StoreContextProvider = props => {
 				name,
 				email,
 				password,
-				isAdmin: false, // Assuming new users are not admins by default
+				isAdmin: false,
 			})
 			return response.data
 		} catch (error) {
@@ -108,6 +137,16 @@ const StoreContextProvider = props => {
 	const logoutUser = () => {
 		setUser(null)
 		localStorage.removeItem('user')
+	}
+
+	const removeFood = async foodId => {
+		try {
+			await axios.delete(`${url}/api/dishes/dishes/${foodId}`)
+			fetchFoodList() // Обновляем список блюд после удаления
+		} catch (error) {
+			console.error('Error deleting food:', error)
+			setError('Error deleting food')
+		}
 	}
 
 	useEffect(() => {
@@ -130,15 +169,20 @@ const StoreContextProvider = props => {
 		setCartItems,
 		addToCart,
 		removeFromCart,
+		clearCart,
 		getTotalCartCount,
 		foodList,
 		menuList,
 		getTotalCartAmount,
+		getCartDetails,
 		loginUser,
 		registerUser,
-		logoutUser, // Добавлена функция для выхода
+		logoutUser,
+		placeOrder,
 		error,
-		user, // Добавлена информация о пользователе
+		user,
+		removeFood,
+		fetchFoodList, // Экспортируем функцию для обновления списка блюд
 	}
 
 	return (

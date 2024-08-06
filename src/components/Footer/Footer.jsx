@@ -10,36 +10,37 @@ const Footer = () => {
     <div className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-column">
-          <img src={assets.logo_test} alt="Logo" className="footer-logo" />
+          <div className="footer-logo-container">
+            <img src={assets.logo_test} alt="Logo" className="footer-logo" />
+            <div className="footer-social-icons">
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={assets.facebook_icon} alt="Facebook" />
+              </a>
+              <a
+                href="https://www.twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={assets.twitter_icon} alt="Twitter" />
+              </a>
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={assets.linkedin_icon} alt="LinkedIn" />
+              </a>
+            </div>
+          </div>
           <div className="footer-text">
             <p>We always make our customers happy.</p>
             <p>
               Fast, fresh, and delicious meals delivered right to your door.
             </p>
-            <p>Your satisfaction is our top priority, every single time!</p>
-          </div>
-          <div className="footer-social-icons">
-            <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={assets.facebook_icon} alt="Facebook" />
-            </a>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={assets.twitter_icon} alt="Twitter" />
-            </a>
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={assets.linkedin_icon} alt="LinkedIn" />
-            </a>
           </div>
         </div>
         <div className="footer-column">
@@ -55,27 +56,11 @@ const Footer = () => {
               <Link to="/menu">Menu</Link>
             </li>
             <li>
-            <Link to="/more-restaurants">Restaurants</Link>
+              <Link to="/more-restaurants">Restaurants</Link>
             </li>
           </ul>
         </div>
-        <div className="footer-column">
-          <h3>SUPPORT</h3>
-          <ul>
-            <li>
-              <Link to="/support-center">Support Center</Link>
-            </li>
-            <li>
-              <Link to="/delivery-terms">Delivery Terms</Link>
-            </li>
-            <li>
-              <Link to="/faq">FAQ</Link>
-            </li>
-            <li>
-              <Link to="/privacy-policy">Privacy policy</Link>
-            </li>
-          </ul>
-        </div>
+
         <div className="footer-column">
           <h3>GET IN TOUCH</h3>
           <ul>

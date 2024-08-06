@@ -1,0 +1,57 @@
+.order-confirmation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .confirmation-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .confirmation-title {
+    font-size: 2rem;
+    color: #49557e;
+    margin-bottom: 10px;
+  }
+  
+  .confirmation-message {
+    font-size: 1.2rem;
+    color: #49557e;
+    margin-bottom: 20px;
+  }
+  
+  .confirmation-details {
+    font-size: 1rem;
+    color: #7d8d9c;
+    margin-bottom: 10px;
+  }
+  
+  .confirmation-footer {
+    font-size: 1.1rem;
+    color: #49557e;
+    margin-top: 20px;
+  }
+  
+  .home-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #49557e;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .home-button:hover {
+    background-color: #3e4a6a;
+  }
+  

@@ -1,4 +1,3 @@
-
 import './TipsBlock.css'
 import ButtonViewAll from '../ButtonViewAll/ButtonViewAll'
 import { assets } from '../../assets/assets'
@@ -8,11 +7,11 @@ const TipsBlock = () => {
 		<section className='advice-tips'>
 			<div className='flex-tips'>
 				<div className='title-tips-32'>Our tips and advice</div>
-				<ButtonViewAll />
+				<ButtonViewAll text="View All"/>
 			</div>
 
 			<div className='container-tips'>
-				<div className='advice-blocks-tips'>
+				<div className='advice-block'>
 					<div className='advice-blocks-content'>
 						<img src={assets.tips1} alt='' />
 						<div className='advice-block-tips'>
@@ -22,13 +21,13 @@ const TipsBlock = () => {
 							<div className='title-tips-16'>
 								We take pride in our cozy setting and the variety of dishes on
 								our menu. Be sure to try our daily specials to discover new
-								culinaryexperiences.
+								culinary experiences.
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div className='advice-blocks-tips'>
+				<div className='advice-block'>
 					<div className='advice-blocks-content'>
 						<img src={assets.tips2} alt='' />
 						<div className='advice-block-tips'>
