@@ -11,7 +11,9 @@ import Cart from './pages/Cart/Cart'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import ScrollToTop from './components/ScrollToTop'
 import ReviewsPage from './pages/Reviews/Reviews'
+import AppDownload from './components/AppDownload/AppDownload'
 import OrderConfirmation from './pages/OrderConfirmation/OrderConfirmation';
+
 
 function App() {
 	const [showLogin, setShowLogin] = useState(false)
@@ -48,6 +50,7 @@ function App() {
 					/>
 				</Routes>
 			</div>
+			{!isAdminRoute && <AppDownload />}
 			{!isAdminRoute && <Footer />}
 		</>
 	)
