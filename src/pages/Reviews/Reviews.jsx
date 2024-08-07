@@ -1,36 +1,36 @@
-import React, { useState } from 'react';
-import './Reviews.css';
+import React, { useState } from "react";
+import "./Reviews.css";
 
 const reviews = [
   {
     id: 1,
-    name: 'Irina P.',
-    date: '2024-08-01',
-    text: 'Excellent service! The food was hot and delicious, and delivery was fast. I am very satisfied with the Gusto restaurant!',
+    name: "Irina P.",
+    date: "2024-08-01",
+    text: "Excellent service! The food was hot and delicious, and delivery was fast. I am very satisfied with the Gusto restaurant!",
   },
   {
     id: 2,
-    name: 'Alexey M.',
-    date: '2024-07-28',
-    text: 'Everything was great, though I appreciate that the packaging is eco-friendly. Other than that – no complaints.',
+    name: "Alexey M.",
+    date: "2024-07-28",
+    text: "Everything was great, though I appreciate that the packaging is eco-friendly. Other than that – no complaints.",
   },
   {
     id: 3,
-    name: 'Marina S.',
-    date: '2024-07-20',
-    text: 'Very tasty dishes and quick delivery. I have ordered multiple times and always remain satisfied.',
+    name: "Marina S.",
+    date: "2024-07-20",
+    text: "Very tasty dishes and quick delivery. I have ordered multiple times and always remain satisfied.",
   },
   {
     id: 4,
-    name: 'Dmitry K.',
-    date: '2024-07-15',
-    text: 'I liked the speed of delivery and the quality of the food. The only thing to improve is the accuracy of the orders, sometimes there are mistakes.',
+    name: "Dmitry K.",
+    date: "2024-07-15",
+    text: "I liked the speed of delivery and the quality of the food. The only thing to improve is the accuracy of the orders, sometimes there are mistakes.",
   },
   {
     id: 5,
-    name: 'Elena V.',
-    date: '2024-07-10',
-    text: 'Gusto is my favorite restaurant! All dishes are always fresh and tasty. Highly recommended!',
+    name: "Elena V.",
+    date: "2024-07-10",
+    text: "Gusto is my favorite restaurant! All dishes are always fresh and tasty. Highly recommended!",
   },
 ];
 
@@ -45,51 +45,50 @@ const ReviewCard = ({ name, date, text }) => (
 const ReviewsPage = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [reviewData, setReviewData] = useState({
-    name: '',
-    review: '',
-    date: ''  
+    name: "",
+    review: "",
+    date: "",
   });
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
   const openModal = () => setIsModalVisible(true);
   const closeModal = () => {
     setIsModalVisible(false);
-    setMessage('');
+    setMessage("");
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setReviewData({
       ...reviewData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleReviewSubmit = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     try {
-      // Send review data to server
-      const response = await fetch('/api/submit-review', {
-        method: 'POST',
+      const response = await fetch("/api/submit-review", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(reviewData)
+        body: JSON.stringify(reviewData),
       });
 
       if (response.ok) {
-        setMessage('Your review has been submitted successfully!');
+        setMessage("Your review has been submitted successfully!");
         setReviewData({
-          name: '',
-          review: '',
-          date: ''  
+          name: "",
+          review: "",
+          date: "",
         });
-        closeModal(); 
+        closeModal();
       } else {
-        setMessage('Something went wrong. Please try again.');
+        setMessage("Something went wrong. Please try again.");
       }
     } catch (error) {
-      setMessage('An error occurred. Please try again.');
+      setMessage("An error occurred. Please try again.");
     }
   };
 
@@ -97,7 +96,9 @@ const ReviewsPage = () => {
     <div className="reviews-page">
       <h1>Customer Reviews for Gusto Restaurant Delivery</h1>
       <div className="add-review">
-        <button className="btn leave-review-btn" onClick={openModal}>Leave a Review</button>
+        <button className="btn leave-review-btn" onClick={openModal}>
+          Leave a Review
+        </button>
       </div>
 
       {reviews.map((review) => (
@@ -112,7 +113,9 @@ const ReviewsPage = () => {
       {isModalVisible && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal}>&times;</button>
+            <button className="modal-close" onClick={closeModal}>
+              &times;
+            </button>
             <div className="review-form">
               <h2>Submit Your Review</h2>
               <form onSubmit={handleReviewSubmit}>
@@ -146,7 +149,9 @@ const ReviewsPage = () => {
                   required
                 ></textarea>
 
-                <button className="btn submit-btn" type="submit">Submit Review</button>
+                <button className="btn submit-btn" type="submit">
+                  Submit Review
+                </button>
               </form>
               {message && <p>{message}</p>}
             </div>
