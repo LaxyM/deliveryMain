@@ -6,7 +6,7 @@ import { assets } from '../../assets/assets'
 
 const Orders = () => {
 	const [orders, setOrders] = useState([])
-	const url = 'https://66acd002f009b9d5c7337a17.mockapi.io/orders' // URL для получения заказов
+	const url = 'https://66acd002f009b9d5c7337a17.mockapi.io/orders'
 
 	const fetchAllOrders = async () => {
 		try {

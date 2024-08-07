@@ -41,7 +41,7 @@ const Add = () => {
 			console.log('Image URL:', imageUrl)
 
 			const response = await axios.post(
-				'https://66a5f78923b29e17a1a1615f.mockapi.io/api/dishes/dishes',
+				'https://66a5f78923b29e17a1a1615f.mockapi.io/dishes/dishes',
 				{
 					...data,
 					price: Number(data.price),

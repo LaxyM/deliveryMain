@@ -79,7 +79,7 @@ const StoreContextProvider = (props) => {
 
   const fetchFoodList = async () => {
     try {
-      const response = await axios.get(url + "/api/dishes/dishes");
+      const response = await axios.get(url + "/dishes/dishes");
       console.log("Food data received:", response.data);
       setFoodList(response.data);
     } catch (error) {
@@ -89,7 +89,7 @@ const StoreContextProvider = (props) => {
 
   const fetchMenuList = async () => {
     try {
-      const response = await axios.get(url2 + "api/dishes/menu/dishes");
+      const response = await axios.get(url2 + "dishes/menu/dishes");
       console.log("Menu data received:", response.data);
       setMenuList(response.data);
     } catch (error) {
@@ -141,7 +141,7 @@ const StoreContextProvider = (props) => {
 
   const removeFood = async (foodId) => {
     try {
-      await axios.delete(`${url}/api/dishes/dishes/${foodId}`);
+      await axios.delete(`${url}/dishes/dishes/${foodId}`);
       fetchFoodList();
     } catch (error) {
       console.error("Error deleting food:", error);
