@@ -15,10 +15,16 @@ const Navbar = ({ setShowLogin, user, setUser }) => {
   const handleLogout = () => {
     setUser(null);
     localStorage.removeItem("user");
+    localStorage.removeItem("authToken");
   };
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen(prev => !prev);
+  };
+
+  const handleMenuClick = (menuItem) => {
+    setMenu(menuItem);
+    setIsMenuOpen(false); // Закрываем меню после выбора
   };
 
   return (
@@ -33,38 +39,38 @@ const Navbar = ({ setShowLogin, user, setUser }) => {
 
       <ul className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
         <li
-          onClick={() => setMenu("home")}
+          onClick={() => handleMenuClick("home")}
           className={menu === "home" ? "active" : ""}
         >
           <Link to="/">HOME</Link>
         </li>
         <li
-          onClick={() => setMenu("menu")}
+          onClick={() => handleMenuClick("menu")}
           className={menu === "menu" ? "active" : ""}
         >
           <Link to="/menu">Menu</Link>
         </li>
         <li
-          onClick={() => setMenu("restaurants")}
+          onClick={() => handleMenuClick("restaurants")}
           className={menu === "restaurants" ? "active" : ""}
         >
           <Link to="/more-restaurants">Restaurants</Link>
         </li>
         <li
-          onClick={() => setMenu("reviews")}
+          onClick={() => handleMenuClick("reviews")}
           className={menu === "reviews" ? "active" : ""}
         >
-          <Link to="/reviews">Reviews</Link> 
+          <Link to="/reviews">Reviews</Link>
         </li>
         <li
-          onClick={() => setMenu("contact")}
+          onClick={() => handleMenuClick("contact")}
           className={menu === "contact" ? "active" : ""}
         >
           <a href="#footer">Contact</a>
         </li>
         {user && user.isAdmin && (
           <li
-            onClick={() => setMenu("admin")}
+            onClick={() => handleMenuClick("admin")}
             className={menu === "admin" ? "active" : ""}
           >
             <Link to="/admin">Admin Panel</Link>

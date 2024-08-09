@@ -8,23 +8,23 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AdminPanel = () => {
-    const url = "http://localhost:5000"; // Пример URL
+  const url = "http://localhost:5000"; 
 
-    return (
-        <div className="admin-panel">
-            <ToastContainer />
-            <NavbarAdmin />
-            <div className="admin-content">
-                <div className="admin-main">
-                    <Routes>
-                        <Route path="add" element={<Add url={url} />} />
-                        <Route path="list" element={<List url={url} />} />
-                        <Route path="orders" element={<Orders url={url} />} />
-                    </Routes>
-                </div>
-            </div>
+  return (
+    <div className="admin-panel">
+      <ToastContainer />
+      <NavbarAdmin />
+      <div className="admin-content">
+        <div className="admin-main">
+          <Routes>
+            <Route path="add" element={<Add url={url} />} />
+            <Route path="list" element={<List url={url} />} />
+            <Route path="orders" element={<Orders url={url} />} />
+          </Routes>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default AdminPanel;

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px; /* Отступ снизу для разделения с контентом */
+  margin: 35px; 
 }
 
 .order-item {
@@ -47,7 +47,7 @@
 }
 
 .delete-order-button {
-  background-color: #ff6f6f; /* Красный цвет кнопки */
+  background-color: #ff6f6f; 
   border: none;
   color: white;
   padding: 10px;
@@ -58,11 +58,11 @@
 }
 
 .delete-order-button:hover {
-  background-color: #ff4c4c; /* Более темный красный при наведении */
+  background-color: #ff4c4c; 
 }
 
 .refresh-button {
-  background-color: #e0e0e0; /* Светло-серый цвет кнопки для менее заметного стиля */
+  background-color: #e0e0e0; 
   border: none;
   color: #505050;
   padding: 8px 12px;
@@ -73,7 +73,7 @@
 }
 
 .refresh-button:hover {
-  background-color: #c0c0c0; /* Более темный серый при наведении */
+  background-color: #c0c0c0; 
 }
 
 .refresh-button:focus {

@@ -60,7 +60,6 @@
 	width: 30px;
 }
 
-/* картинка карточки */
 .carousel-food-img {
 	width: 310px;
 	height: 360px;
@@ -69,7 +68,6 @@
 	margin-bottom: 10px;
 }
 
-/* карточка */
 .carousel-food-item {
 	background-color: #fafafa;
 	padding: 15px;
